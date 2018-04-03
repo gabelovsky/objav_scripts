@@ -56,9 +56,7 @@ for index in range(0,len(full_data)):
         cast[actor['name']][index]=1
     if index%10000 == 0:
         print(index)
-print('kek wat')
 for actor in actors:
     full_data[actor]= cast[actor]
-print("we here boys")
 
 full_data.to_csv('added_rows.csv',sep=',',encoding='utf-8', index=False)
