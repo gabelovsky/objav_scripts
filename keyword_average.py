@@ -3,7 +3,7 @@ import numpy as np
 from datetime import datetime
 import ast
 
-full_data=pd.read_csv('full_data.csv',delimiter=';')
+full_data=pd.read_csv('added_rows.csv',delimiter=',')
 
 keywords_vote_dict={}
 keywords_vote_average = []
@@ -30,4 +30,4 @@ for index in range(0,len(full_data)):
 
 full_data['keywords_first_film'] = keywords_first_film
 full_data['keywords_vote_average'] = keywords_vote_average
-full_data.to_csv('full_data.csv',sep=';', index=False)
+full_data.to_csv('added_rows.csv',sep=',', encoding='utf-8',index=False)

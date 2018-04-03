@@ -4,7 +4,18 @@ from datetime import datetime
 import ast
 import operator
 
-full_data=pd.read_csv('full_data.csv',delimiter=';')
+#full_data=pd.read_csv('added_rows.csv',delimiter=',',low_memory=False)
+
+mylist = []
+for chunk in  pd.read_csv('added_rows.csv',delimiter=',', chunksize=20000):
+    mylist.append(chunk)
+print("hereh")
+full_data = pd.concat(mylist, axis= 0)
+print("kek")
+del mylist
+
+
+
 crew_dict={}
 for index in range(0,len(full_data)):
     row_crew=ast.literal_eval(full_data['crew'][index])
@@ -39,8 +50,7 @@ for index in range(0,len(full_data)):
         crew[actor['name']][index]=1
     if index%100 == 0:
         print(index)
-
 for crew_i in crew_top:
     full_data[crew_i]= crew[crew_i]
 
-full_data.to_csv('full_data.csv',sep=';', index=False)
+full_data.to_csv('added_rows.csv',sep=',', index=False)

@@ -3,7 +3,7 @@ import numpy as np
 from datetime import datetime
 import ast
 
-full_data=pd.read_csv('full_data.csv',delimiter=';')
+full_data=pd.read_csv('added_rows.csv',delimiter=',')
 
 #cast_dict={}
 #for index, row in full_data.iterrows():
@@ -54,4 +54,4 @@ for index in range(0,len(full_data)):
 
 full_data['cast_first_film'] = cast_first_film
 full_data['cast_vote_average'] = cast_vote_average
-full_data.to_csv('full_data.csv',sep=';', index=False)
+full_data.to_csv('added_rows.csv',sep=',', index=False)
