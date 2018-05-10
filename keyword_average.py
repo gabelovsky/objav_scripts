@@ -1,3 +1,4 @@
+#Script for calculating the keyword value of the movies
 import pandas as pd
 import numpy as np
 from datetime import datetime

@@ -1,3 +1,4 @@
+#Script for calculating the crew value of the movies
 import pandas as pd
 import numpy as np
 from datetime import datetime

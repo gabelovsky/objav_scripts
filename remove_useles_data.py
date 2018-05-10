@@ -1,3 +1,4 @@
+#Script for removing unused columns from the data
 import pandas as pd
 import numpy as np
 from datetime import datetime
